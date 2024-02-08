@@ -298,7 +298,7 @@ func (s *SysdigLog) GetLastRequestUUID() string {
 		return UNKNOWN
 	}
 	if value, exist := conf.NodeLastRequestUUIDMap[s.HostID+"#"+s.ContainerID]; exist {
-		if value == "" { // 当前uuid被清空
+		if value == "" {
 			return UNKNOWN
 		}
 		return value

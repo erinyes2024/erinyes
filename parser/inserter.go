@@ -87,7 +87,7 @@ func (pi *Inserter) InsertEdge(db *gorm.DB, edgeI ParsedEdge, startID int, endID
 			defer models.Mu.Unlock()
 			var existSysdigPO models.Event
 			result := db.Where("src_id = ? AND dst_id = ? AND event_class = ? AND operation = ? AND uuid = ?", startID, endID, sysdigEdge.EventCLass, sysdigEdge.Operation, sysdigEdge.UUID).First(&existSysdigPO)
-			if result.Error == nil { // 存在该记录 不需要插入
+			if result.Error == nil { 
 				return
 			}
 		}
