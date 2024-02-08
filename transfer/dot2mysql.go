@@ -21,7 +21,6 @@ func GetPaths() []string {
 	var dotPaths []string
 	_ = filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 		if !info.IsDir() {
-			// 只处理非目录类型的文件
 			filename := filepath.Base(path)
 			dotPaths = append(dotPaths, dir+"/"+filename)
 		}
